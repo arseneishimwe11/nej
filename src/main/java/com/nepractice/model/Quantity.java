@@ -27,4 +27,16 @@ public class Quantity {
     // Constructors, getters, and setters
     // ...
 
+
+
+
+
+
+
+
+
+
+
+    private String code;
+
 }

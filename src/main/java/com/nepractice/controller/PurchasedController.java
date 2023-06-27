@@ -1,9 +1,8 @@
 package com.nepractice.controller;
 
 
-import com.nepractice.model.Product;
+//import com.nepractice.model.Product;
 import com.nepractice.model.Purchased;
-import com.nepractice.services.ProductService;
 import com.nepractice.services.PurchasedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,12 +16,12 @@ import java.util.Optional;
 @RequestMapping("/api/purchased")
 public class PurchasedController {
     private final PurchasedService purchasedService;
-    private final ProductService productService;
+//    private final ProductService productService;
 
     @Autowired
-    public PurchasedController(PurchasedService purchasedService, ProductService productService) {
+    public PurchasedController(PurchasedService purchasedService) {
         this.purchasedService = purchasedService;
-        this.productService = productService;
+//        this.productService = productService;
     }
 
     @GetMapping

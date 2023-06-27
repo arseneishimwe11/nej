@@ -50,7 +50,20 @@ public class ProductManagementService {
 //                .orElseThrow(() -> new IllegalArgumentException("Invalid product id: " + productId));
         if(product == null){
             System.out.println("No product found!");
+            return;
         }
+//        if(product.get)
+        Quantity quantity1 = quantityRepository.findByCode(productId.getCode());
+        if(quantity1.getQuantity() < quantity) {
+            System.out.println("Product out of the stock!");
+            return;
+        }
+        //reducing quantity of the product
+        Integer reducedQuantity = quantity1.getQuantity() - quantity;
+        quantity1.setQuantity(reducedQuantity);
+        quantityRepository.save(quantity1);
+
+        //saving in purchased table
         Purchased purchasedItem = new Purchased();
         purchasedItem.setProductCode(productId);
         purchasedItem.setQuantity(quantity);

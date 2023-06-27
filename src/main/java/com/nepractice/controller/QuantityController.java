@@ -2,7 +2,7 @@ package com.nepractice.controller;
 
 import com.mbyj.model.Product;
 import com.nepractice.model.Quantity;
-import com.nepractice.services.ProductService;
+//import com.nepractice.services.ProductService;
 import com.nepractice.services.QuantityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,12 +16,12 @@ import java.util.Optional;
 @RequestMapping("/api/quantities")
 public class QuantityController {
     private final QuantityService quantityService;
-    private final ProductService productService;
+//    private final ProductService productService;
 
     @Autowired
-    public QuantityController(QuantityService quantityService, ProductService productService) {
+    public QuantityController(QuantityService quantityService) {
         this.quantityService = quantityService;
-        this.productService = productService;
+//        this.productService = productService;
     }
 
     @GetMapping
